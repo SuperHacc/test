@@ -1,0 +1,65 @@
+form{
+    width: 50%;
+}
+
+/* width: 50%;: Задает ширину формы в 50% от ее контейнера.
+.input_box: */
+
+
+.input_box{
+    width: 50%;
+    outline: 0;
+}
+/* width: 50%;: Задает ширину элементов .input_box внутри формы в 50% от ее контейнера. */
+/* outline: 0;: Удаляет контур вокруг элементов ввода при фокусировке. */
+
+/*display: inline-block;: Устанавливает метку как строчно-блочный элемент.
+width:52px; height:26px;: Задает ширину и высоту метки.
+border-radius: 26px;: Создает скругленные углы для метки.
+background-color:#95a5a6 ;: Устанавливает цвет фона метки.
+transition: background 0.5s;: Задает анимацию перехода цвета фона при изменении.
+position: relative;: Позиционирует метку относительно ее родительского контейнера. */
+#form_save+label{
+    display: inline-block;
+    width: 52px;
+    height: 26px;
+    background-color: #95a5a6;
+    position: relative;
+    border-radius: 26px;
+}
+
+#form_save:checked+label{
+    background-color: #27ae60;
+}
+
+
+#form_save+label::after{
+    content:"";
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: left 0.5s;
+
+}
+
+#form_save:checked+label::after{
+    left: 28px;
+    
+}
+/* #form_save:checked+label:after:
+
+left: 28px;: Устанавливает новое положение внутреннего круга метки при выборе чекбокса. */
+
+
+#form_save{
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+}
+
+
